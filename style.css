@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrains Mono", monospace;
+}
+html {
+  background-color: #bdcdd6;
+}
+header {
+  height: 100px;
+  background: #6096b4;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+header > h1 {
+  color: #bdcdd6;
+}
+.buttonContainerD {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+#showDialogButton {
+  height: 50px;
+  width: 50px;
+  background-color: #6096b4;
+  border: 0;
+}
+#showDialogButton > img {
+  height: 50px;
+  width: 50px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+img:hover {
+  transform: scale(1.2);
+}

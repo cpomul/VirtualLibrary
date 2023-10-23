@@ -1,5 +1,9 @@
 const bookForm = document.querySelector("#bookForm");
 const bookList = document.querySelector("#bookList");
+const showDialogButton = document.querySelector("#showDialogButton");
+const closeFormButton = document.querySelector("#closeFormButton");
+const dialog = document.querySelector("#dialog");
+const closeDialog = document.querySelector("#closeDialog");
 
 const myLibrary = [];
 
@@ -21,4 +25,19 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
   });
 }
+// this should be updated on each new object added to myLibrary[]
+function displayBooksOnCards() {}
+
+showDialogButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeFormButton.addEventListener("click", () => {
+  dialog.close();
+});
+
+closeDialog.addEventListener("click", () => {
+  dialog.close();
+});
+
 addBookToLibrary();

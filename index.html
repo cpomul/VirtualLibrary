@@ -7,16 +7,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Book Form</h2>
-    <form id="bookForm">
-      <label for="title">Title:</label>
-      <input type="text" id="title" required /><br />
-      <label for="author">Author:</label>
-      <input type="text" id="author" required /><br />
-      <label for="pages">Year:</label>
-      <input type="number" id="pages" required /><br />
-      <input type="submit" value="Add Book" />
-    </form>
+    <header>
+      <div class="buttonContainerD">
+        <button type="submit" id="showDialogButton">
+          <img src="images/book-plus.svg " />
+        </button>
+      </div>
+      <h1>{Virtual Library}</h1>
+    </header>
+    <main>
+      <dialog id="dialog">
+        <form id="bookForm">
+          <label for="title">Title:</label>
+          <input type="text" id="title" required /><br />
+          <label for="author">Author:</label>
+          <input type="text" id="author" required /><br />
+          <label for="pages">Year:</label>
+          <input type="number" id="pages" required /><br />
+          <input type="submit" value="Add Book" id="closeFormButton" />
+        </form>
+        <button type="submit" id="closeDialog">X</button>
+      </dialog>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
