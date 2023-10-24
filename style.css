@@ -38,3 +38,54 @@ header > h1 {
 img:hover {
   transform: scale(1.2);
 }
+.cardContainer {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.book-card {
+  margin: 50px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  white-space: pre-wrap;
+  text-align: center;
+  line-height: 50px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#dialog {
+  margin: auto;
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#dialog button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}

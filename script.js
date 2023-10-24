@@ -4,6 +4,7 @@ const showDialogButton = document.querySelector("#showDialogButton");
 const closeFormButton = document.querySelector("#closeFormButton");
 const dialog = document.querySelector("#dialog");
 const closeDialog = document.querySelector("#closeDialog");
+const cardContainer = document.querySelector(".cardContainer");
 
 const myLibrary = [];
 
@@ -23,11 +24,23 @@ function addBookToLibrary() {
 
     const newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
+
+    displayBooksOnCards();
   });
 }
-// this should be updated on each new object added to myLibrary[]
-function displayBooksOnCards() {}
+function displayBooksOnCards() {
+  // Clear duplicate cards
+  cardContainer.innerHTML = "";
 
+  myLibrary.forEach((book) => {
+    const cardItem = document.createElement("div");
+    cardItem.className = "book-card";
+    cardItem.textContent = `Title: ${book.title}\nAuthor: ${book.author}\nPages: ${book.pages}`;
+    cardContainer.appendChild(cardItem);
+  });
+}
+
+//Button functionality
 showDialogButton.addEventListener("click", () => {
   dialog.showModal();
 });
