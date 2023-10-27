@@ -1,7 +1,7 @@
 const bookForm = document.querySelector("#bookForm");
 const bookList = document.querySelector("#bookList");
 const showDialogButton = document.querySelector("#showDialogButton");
-const closeFormButton = document.querySelector("#closeFormButton");
+const submitFormButton = document.querySelector("#submitFormButton");
 const dialog = document.querySelector("#dialog");
 const closeDialog = document.querySelector("#closeDialog");
 const cardContainer = document.querySelector(".cardContainer");
@@ -45,7 +45,7 @@ showDialogButton.addEventListener("click", () => {
   dialog.showModal();
 });
 
-closeFormButton.addEventListener("click", () => {
+submitFormButton.addEventListener("click", () => {
   dialog.close();
 });
 

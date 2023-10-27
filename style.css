@@ -70,22 +70,34 @@ img:hover {
 }
 #dialog {
   margin: auto;
-  width: 300px;
+  width: 250px;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  height: 170px;
 }
 
 #dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#dialog button {
+#dialog > #closeDialog {
   background-color: #e74c3c;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+  width: 60px;
+}
+
+#dialog > #bookForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
