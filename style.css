@@ -101,3 +101,10 @@ img:hover {
   flex-direction: column;
   text-align: center;
 }
+
+#submitFormButton {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
