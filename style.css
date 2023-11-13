@@ -108,3 +108,17 @@ img:hover {
   margin-right: auto;
   margin-top: 5px;
 }
+
+.deleteButton {
+  display: flex;
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 2px;
+  margin-left: 180px;
+  background-color: rebeccapurple;
+  border: 0;
+}
+
+.deleteButton:hover {
+  background-color: red;
+}

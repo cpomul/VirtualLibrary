@@ -38,8 +38,9 @@ function displayBooksOnCards() {
     const cardItem = document.createElement("div");
     cardItem.className = "book-card";
     const deleteButton = document.createElement("button");
+    deleteButton.className = "deleteButton";
     deleteButton.type = "button";
-    deleteButton.textContent = "delete";
+    deleteButton.textContent = "X";
 
     deleteButton.addEventListener("click", () => {
       // Remove the book from the array
