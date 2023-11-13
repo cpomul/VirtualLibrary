@@ -37,7 +37,19 @@ function displayBooksOnCards() {
   myLibrary.forEach((book) => {
     const cardItem = document.createElement("div");
     cardItem.className = "book-card";
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.textContent = "delete";
+
+    deleteButton.addEventListener("click", () => {
+      // Remove the book from the array
+      myLibrary.splice(book, 1);
+      // Redraw the cards without the deleted book
+      displayBooksOnCards();
+    });
+
     cardItem.textContent = `Title: ${book.title}\nAuthor: ${book.author}\nPages: ${book.pages}`;
+    cardItem.appendChild(deleteButton);
     cardContainer.appendChild(cardItem);
   });
 }
