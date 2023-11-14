@@ -30,42 +30,55 @@ function addBookToLibrary() {
     displayBooksOnCards();
   });
 }
+
+function createCard(book) {
+  const cardItem = document.createElement("div");
+  cardItem.className = "book-card";
+  const deleteButton = document.createElement("button");
+  deleteButton.className = "deleteButton";
+  deleteButton.type = "button";
+  deleteButton.textContent = "X";
+
+  deleteButton.addEventListener("click", () => {
+    removeBookFromLibrary(book);
+    displayBooksOnCards();
+  });
+
+  cardItem.textContent = `Title: ${book.title}\nAuthor: ${book.author}\nPages: ${book.pages}`;
+  cardItem.appendChild(deleteButton);
+  cardContainer.appendChild(cardItem);
+}
+
 function displayBooksOnCards() {
-  // Clear duplicate cards
-  cardContainer.innerHTML = "";
+  clearCardContainer();
 
   myLibrary.forEach((book) => {
-    const cardItem = document.createElement("div");
-    cardItem.className = "book-card";
-    const deleteButton = document.createElement("button");
-    deleteButton.className = "deleteButton";
-    deleteButton.type = "button";
-    deleteButton.textContent = "X";
-
-    deleteButton.addEventListener("click", () => {
-      // Remove the book from the array
-      myLibrary.splice(book, 1);
-      // Redraw the cards without the deleted book
-      displayBooksOnCards();
-    });
-
-    cardItem.textContent = `Title: ${book.title}\nAuthor: ${book.author}\nPages: ${book.pages}`;
-    cardItem.appendChild(deleteButton);
-    cardContainer.appendChild(cardItem);
+    createCard(book);
   });
 }
 
-//Button functionality
-showDialogButton.addEventListener("click", () => {
+function clearCardContainer() {
+  cardContainer.innerHTML = "";
+}
+
+function removeBookFromLibrary(book) {
+  const index = myLibrary.indexOf(book);
+  if (index !== -1) {
+    myLibrary.splice(index, 1);
+  }
+}
+
+function openDialog() {
   dialog.showModal();
-});
+}
 
-submitFormButton.addEventListener("click", () => {
+function closeDialogBox() {
   dialog.close();
-});
+}
 
-closeDialog.addEventListener("click", () => {
-  dialog.close();
-});
+// Button functionality
+showDialogButton.addEventListener("click", openDialog);
+submitFormButton.addEventListener("click", closeDialogBox);
+closeDialog.addEventListener("click", closeDialogBox);
 
 addBookToLibrary();
